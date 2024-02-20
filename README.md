@@ -1,103 +1,47 @@
-## Introduction
+# This file defines a set of API endpoints for managing products in an Express application.
 
-This file defines a set of API endpoints for managing products in an Express application.
-
-## Dependencies
+## Dependencies:
 
 This code assumes the existence of a Product model with appropriate methods for interacting with your product database.
-Endpoints
-GET /products
+Endpoints:
+
+## GET /products
+
 Retrieves all products from the database.
+Success response: Status code 200, JSON array of products.
+Error response: Status code 500, JSON object with error message.
 
-## Success Response:
+## GET /products/:id
 
-#### Status code: 200
-
-Content-Type: application/json
-Body: JSON array of product objects
-Error Response:
-
-#### Status code: 500
-
-Content-Type: application/json
-Body: JSON object containing an error message
-GET /products/:id
 Retrieves a specific product by its ID.
+Success response: Status code 200, JSON object of the product.
+Error response:
+Status code 404: Product not found.
+Status code 500: Internal server error.
 
-## Success Response:
+## POST /products
 
-#### Status code: 200
-
-Content-Type: application/json
-Body: JSON object representing the product
-Error Response:
-
-#### Status code: 404
-
-Content-Type: application/json
-Body: JSON object containing an error message ("Product not found")
-
-#### Status code: 500
-
-Content-Type: application/json
-Body: JSON object containing an error message
-POST /products
 Creates a new product based on the provided data in the request body.
+Success response: Status code 200, JSON object of the created product.
+Error response: Status code 500, JSON object with error message.
 
-## Success Response:
+## PUT /products/:id
 
-#### Status code: 200
-
-Content-Type: application/json
-Body: JSON object representing the created product
-Error Response:
-
-#### Status code: 500
-
-Content-Type: application/json
-Body: JSON object containing an error message
-PUT /products/:id
 Updates an existing product with the provided data in the request body.
+Success response: Status code 200, JSON object of the updated product.
+Error response:
+Status code 404: Product not found.
+Status code 500: Internal server error.
 
-## Success Response:
+## DELETE /products/:id
 
-#### Status code: 200
-
-Content-Type: application/json
-Body: JSON object representing the updated product
-Error Response:
-
-#### Status code: 404
-
-Content-Type: application/json
-Body: JSON object containing an error message ("Product not found")
-
-#### Status code: 500
-
-Content-Type: application/json
-Body: JSON object containing an error message
-DELETE /products/:id
 Deletes a specific product by its ID.
+Success response: Status code 200, JSON object with success message.
+Error response:
+Status code 404: Product not found.
+Status code 500: Internal server error.
 
-## Success Response:
-
-#### Status code: 200
-
-Content-Type: application/json
-Body: JSON object containing a success message ("Product deleted successfully")
-Error Response:
-
-#### Status code: 404
-
-Content-Type: application/json
-Body: JSON object containing an error message ("Product not found")
-
-#### Status code: 500
-
-Content-Type: application/json
-Body: JSON object containing an error message
-
-## Notes
+## Notes:
 
 All error responses include a human-readable error message in the JSON body.
 This is a basic example and can be extended to include additional features and functionalities specific to your application.
