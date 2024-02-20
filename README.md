@@ -1,5 +1,7 @@
 # This file defines a set of API endpoints for managing products in an Express application.
 
+This result was from this tutorial: [CRUD App Backend](https://www.youtube.com/watch?v=_7UQPve99r4&t=1063s)
+
 ## Dependencies:
 
 This code assumes the existence of a Product model with appropriate methods for interacting with your product database.
